@@ -14,7 +14,7 @@ body {
 
 h1 {
     font-size: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.3rem;
     font-family: Merriweather Sans, Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 500;
     text-shadow: 1px 1px rgb(76, 59, 31);
@@ -42,6 +42,9 @@ h2 {
 .column {
     display: flex;
     flex-direction: column;
+}
+
+.square {
     background-color: #4D3157;
     padding: 2rem;
     border-radius: 20px;
@@ -82,3 +85,70 @@ h2 {
 }
 
 /* game style */
+
+.answer-container {
+    display: flex;
+    margin-bottom: 0.8rem;
+    width: 100%;
+    border-radius: 4px;
+    background: #4d3157;
+    font-size: 1rem;
+    min-width: 60rem;
+}
+
+.answer-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0.2rem 0.2rem 0 rgba(199, 232, 243, 0.6);
+    transform: scale(1.02);
+    transition: transform 100ms;
+}
+
+.answer-prefix {
+    padding: 1.5rem 2rem;
+}
+
+.answer-text {
+    padding: 1.5rem;
+    width: 100%
+}
+
+/* Display on top */
+
+#display {
+    display: flex;
+    justify-content: space-between;
+}
+
+.display-prefix {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.display-main-text {
+    text-align: center;
+}
+
+#progressBar {
+    width: 12rem;
+    height: 1rem;
+    border:0.2rem solid rgb(191, 154, 202);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+#progressBarFull {
+    height: 100%;
+    background: rgb(191, 154, 202);
+    width: 0%;
+}
+
+@media screen and (max-width: 810px) {
+    .h1 {
+        font-size: 0.5rem;
+    }
+    .answer-container {
+        min-width: 10rem;
+    }
+}
