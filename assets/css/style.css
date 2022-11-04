@@ -12,6 +12,16 @@ body {
     color: #BF9ACA;
 }
 
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
 h1 {
     font-size: 2rem;
     margin-bottom: 2.3rem;
