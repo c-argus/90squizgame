@@ -1,7 +1,7 @@
 const question = document.querySelector('#question');
 const answer = Array.from(document.querySelector('.answer-text'));
 const progressNumber = document.querySelector('#progressNumber');
-const scoreText = document.querySelector('#total-score');
+const scoreText = document.querySelector('#main-score');
 const progressBarFull = document.querySelector('#progressBarFull');
 
 let currentQuestion = {}
@@ -96,3 +96,7 @@ let question = [
 const SCORE_POINTS = 100
 const MAX_QUESTIONS = 10
 
+startGame = () => {
+    questionCounter = 0
+    tscore
+}
