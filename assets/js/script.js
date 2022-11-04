@@ -1,16 +1,16 @@
-const question = document.querySelector('#question');
-const answer = Array.from(document.querySelector('.answer-text'));
-const progressNumber = document.querySelector('#progressNumber');
-const scoreText = document.querySelector('#main-score');
-const progressBarFull = document.querySelector('#progressBarFull');
+const question = document.getElementById('question');
+const answerText = Array.from(document.getElementsByClassName('answer-text'));
+const progressNumber = document.getElementById('progressNumber');
+const scoreText = document.getElementById('main-score');
+const progressBarFull = document.getElementById('progressBarFull');
 
 let currentQuestion = {}
 let acceptingAnswers = true
 let score = 0
 let questionCounter = 0
-let availabeQuestions = []
+let availableQuestions = []
 
-let question = [
+let questions = [
     {
         question: "Which video game was the first video game played in space during the 1990’s?",
         option1: "Pac Man",
@@ -99,12 +99,12 @@ const MAX_QUESTIONS = 10
 startGame = () => {
     questionCounter = 0
     score = 0
-    availabeQuestions = [...question]
+    availableQuestions = [...questions]
     getNewQuestion()
 }
 
 getNewQuestion = () => {
-    if(availabeQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
 
         return window.location.assign("/lastpage.html")
@@ -114,9 +114,46 @@ getNewQuestion = () => {
     progressNumber.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
     progressBarFull.getElementsByClassName.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
 
-    const questionsIndex = Math.floor(Math.random() * availabeQuestions.length)
-    currentQuestion = availabeQuestions[questionsIndex]
+    const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
+    currentQuestion = availableQuestions[questionsIndex]
     question.innerText = currentQuestion.question
 
-        
+    answerText.forEach(option => {
+        const number = option.dataset["number"]
+        option.innerText = currentQuestion["option" + number]
+    })
+
+    availableQuestions.splice(questionsIndex, 1)
+
+    acceptingAnswers = true
 }
+
+answerText.forEach(option => {
+    option.addEventListener("click", e => {
+        if(!acceptingAnswers) return
+
+        acceptingAnswers = false
+        const selectedOption = e.target
+        const selectedAnswer = selectedOption.dataset['number']
+
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+
+        if(classToApply == 'correct') {
+            incrementScore(SCORE_POINTS)
+        }
+
+        selectedOption.parentElement.classList.add(classToApply)
+
+        setTimeout(() => {
+            selectedOption.parentElement.classList.remove(classToApply)
+            getNewQuestion()
+        }, 1000)
+    })
+})
+
+incrementScore = num => {
+    score += num
+    scoreText.innerText = score
+}
+
+startGame()
