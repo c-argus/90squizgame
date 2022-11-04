@@ -72,6 +72,18 @@ h2 {
     align-items: center;
 }
 
+.j-center {
+    justify-content: center;
+}
+
+.text {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
 .btn {
     font-size: 1.3rem;
     font-weight: 300;
