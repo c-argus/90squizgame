@@ -140,6 +140,16 @@ h2 {
     width: 100%
 }
 
+/* Correct and Incorrect answers */
+
+.correct {
+    background: #00FF99;
+}
+
+.incorrect {
+    background: #FF1A00;
+}
+
 /* Display on top */
 
 #display {
