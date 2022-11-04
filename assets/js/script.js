@@ -10,7 +10,7 @@ let score = 0
 let questionCounter = 0
 let availableQuestions = []
 
-let questions = [
+let MyQuestions = [
     {
         question: "Which video game was the first video game played in space during the 1990’s?",
         option1: "Pac Man",
@@ -99,23 +99,23 @@ const MAX_QUESTIONS = 10
 startGame = () => {
     questionCounter = 0
     score = 0
-    availableQuestions = [...questions]
+    availableQuestions = [...MyQuestions]
     getNewQuestion()
 }
 
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-        localStorage.setItem('mostRecentScore', score)
+        localStorage.setItem('currentScore', score)
 
-        return window.location.assign("/lastpage.html")
+        return window.location.assign("/finishpage.html")
     }
 
     questionCounter++
     progressNumber.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
-    progressBarFull.getElementsByClassName.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
+    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
 
-    const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
-    currentQuestion = availableQuestions[questionsIndex]
+    const MyQuestionsIndex = Math.floor(Math.random() * availableQuestions.length)
+    currentQuestion = availableQuestions[MyQuestionsIndex]
     question.innerText = currentQuestion.question
 
     answerText.forEach(option => {
@@ -123,7 +123,7 @@ getNewQuestion = () => {
         option.innerText = currentQuestion["option" + number]
     })
 
-    availableQuestions.splice(questionsIndex, 1)
+    availableQuestions.splice(MyQuestionsIndex, 1)
 
     acceptingAnswers = true
 }
