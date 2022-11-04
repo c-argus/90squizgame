@@ -19,11 +19,13 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
 }
 
 .game-title {
     font-family: Monoton, 'Courier New', Courier, monospace;
+    margin-top: 4rem;
 }
 
 h1 {
@@ -131,6 +133,7 @@ h2 {
 #display {
     display: flex;
     justify-content: space-between;
+    margin-top: 6rem;
 }
 
 .display-prefix {
@@ -164,5 +167,17 @@ h2 {
     }
     .answer-container {
         min-width: 10rem;
+    }
+}
+
+@media (min-width: 300px) {
+    header {
+        margin-top: 0;
+    }
+    h1 {
+        font-size: 1.7rem;
+    }
+    .game-title {
+        margin-top: 0.5rem;
     }
 }
