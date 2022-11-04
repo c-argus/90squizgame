@@ -1,7 +1,7 @@
 const question = document.querySelector('#question');
 const answer = Array.from(document.querySelector('.answer-text'));
-const progressText = document.querySelector('#progressText');
-const scoreText = document.querySelector('#score');
+const progressNumber = document.querySelector('#progressNumber');
+const scoreText = document.querySelector('#total-score');
 const progressBarFull = document.querySelector('#progressBarFull');
 
 let currentQuestion = {}
