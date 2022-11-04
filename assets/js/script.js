@@ -1,8 +1,8 @@
-const question = document.getElementById('question');
-const answerText = Array.from(document.getElementsByClassName('answer-text'));
-const progressNumber = document.getElementById('progressNumber');
-const scoreText = document.getElementById('main-score');
-const progressBarFull = document.getElementById('progressBarFull');
+var question = document.getElementById('question');
+var answerText = Array.from(document.getElementsByClassName('answer-text'));
+var progressNumber = document.getElementById('progressNumber');
+var scoreText = document.getElementById('main-score');
+var progressBarFull = document.getElementById('progressBarFull');
 
 let currentQuestion = {}
 let acceptingAnswers = true
@@ -93,8 +93,8 @@ let MyQuestions = [
     },
 ]
 
-const SCORE_POINTS = 100
-const MAX_QUESTIONS = 10
+var ScorePoints = 100
+var TotalQuestions = 10
 
 startGame = () => {
     questionCounter = 0
@@ -104,15 +104,15 @@ startGame = () => {
 }
 
 getNewQuestion = () => {
-    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+    if(availableQuestions.length === 0 || questionCounter > TotalQuestions) {
         localStorage.setItem('currentScore', score)
 
         return window.location.assign("/finishpage.html")
     }
 
     questionCounter++
-    progressNumber.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
-    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
+    progressNumber.innerText = `Question ${questionCounter} of ${TotalQuestions}`
+    progressBarFull.style.width = `${(questionCounter/TotalQuestions) * 100}%`
 
     const MyQuestionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[MyQuestionsIndex]
@@ -139,7 +139,7 @@ answerText.forEach(option => {
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
         if(classToApply == 'correct') {
-            incrementScore(SCORE_POINTS)
+            incrementScore(ScorePoints)
         }
 
         selectedOption.parentElement.classList.add(classToApply)
