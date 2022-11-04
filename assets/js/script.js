@@ -98,5 +98,25 @@ const MAX_QUESTIONS = 10
 
 startGame = () => {
     questionCounter = 0
-    tscore
+    score = 0
+    availabeQuestions = [...question]
+    getNewQuestion()
+}
+
+getNewQuestion = () => {
+    if(availabeQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+        localStorage.setItem('mostRecentScore', score)
+
+        return window.location.assign("/lastpage.html")
+    }
+
+    questionCounter++
+    progressNumber.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
+    progressBarFull.getElementsByClassName.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
+
+    const questionsIndex = Math.floor(Math.random() * availabeQuestions.length)
+    currentQuestion = availabeQuestions[questionsIndex]
+    question.innerText = currentQuestion.question
+
+        
 }
