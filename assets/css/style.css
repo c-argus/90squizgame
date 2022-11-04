@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Guntur&family=Merriweather+Sans&family=Viga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Guntur&family=Merriweather+Sans&family=Monoton&family=Viga&display=swap');
 
 body {
     background-color: #8E4162;
@@ -20,6 +20,10 @@ header {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+}
+
+.game-title {
+    font-family: Monoton, 'Courier New', Courier, monospace;
 }
 
 h1 {
