@@ -10,6 +10,8 @@ let score = 0
 let questionCounter = 0
 let availableQuestions = []
 
+/* Quiz Questions */
+
 let MyQuestions = [
     {
         question: "Which video game was the first video game played in space during the 1990’s?",
