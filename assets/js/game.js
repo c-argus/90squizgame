@@ -38,11 +38,12 @@ getNewQuestion = () => {
 
     const MyQuestionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[MyQuestionsIndex]
+    console.log(currentQuestion);
     question.innerText = currentQuestion.question
 
     answerText.forEach(option => {
         const number = option.dataset["number"]
-        option.innerText = currentQuestion["option" + number]
+        option.innerText = currentQuestion["options"][number-1]
     })
 
     availableQuestions.splice(MyQuestionsIndex, 1)
