@@ -3,7 +3,8 @@ var answerText = Array.from(document.getElementsByClassName('answer-text'));
 var progressNumber = document.getElementById('progressNumber');
 var scoreText = document.getElementById('main-score');
 var progressBarFull = document.getElementById('progressBarFull');
-let toggleButton = document.getElementById("audio-toggle");
+let toggleAudio = document.getElementById("audio-toggle");
+let audioOn = true;
 let currentQuestion = {}
 let acceptingAnswers = true
 let currentScore = 0
@@ -16,6 +17,10 @@ var ScorePoints = 100
 let TotalQuestions = 10
 
 console.log(MyQuestions);
+
+toggleAudio.addEventListener("click", e => {
+    (audioOn)? audioOn = false : audioOn = true;
+})
 
 startGame = () => {
     questionCounter = 0
@@ -68,9 +73,9 @@ answerText.forEach(option => {
 
         if (classToApply == 'correct') {
             incrementScore(ScorePoints)
-            successAudio.play()
+            if (audioOn) successAudio.play();
         } else {
-            failureAudio.play()
+            if (audioOn) failureAudio.play();
         }
 
         selectedOption.parentElement.classList.add(classToApply)
