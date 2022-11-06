@@ -4,5 +4,5 @@ console.log(scores);
 
 highScoresList.innerHTML = 
 scores.map(score => {
-    return `<li class="high-score">${scoreText.name} - ${scoreText.score}</li>`
+    return `<li class="high-score">${score.name} - ${score.scoreText}</li>`
 }).join('')
