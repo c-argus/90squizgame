@@ -29,5 +29,5 @@ saveHighScore = e => {
 
     scores.splice(5)
     localStorage.setItem('scores', JSON.stringify(scores))
-    window.location.assign('/')
+    window.location.assign('/index.html')
 }
