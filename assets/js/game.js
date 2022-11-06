@@ -66,10 +66,10 @@ answerText.forEach(option => {
 
         selectedOption.parentElement.classList.add(classToApply)
 
-        setTimeout(() => {
-            selectedOption.parentElement.classList.remove(classToApply)
-            getNewQuestion()
-        }, 1000)
+        // setTimeout(() => {
+        selectedOption.parentElement.classList.remove(classToApply)
+        getNewQuestion()
+        // }, 1000)
     })
 })
 
