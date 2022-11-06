@@ -44,7 +44,6 @@ getNewQuestion = () => {
     answerText.forEach(option => {
         const availableAnswers = currentQuestion["options"]
         const randomAnswer = Math.floor(Math.random() * availableAnswers.length)
-        // const number = option.dataset["number"]
         option.innerText = currentQuestion["options"][randomAnswer]
         availableAnswers.splice(randomAnswer, 1)
     })
@@ -59,9 +58,8 @@ answerText.forEach(option => {
         if (!acceptingAnswers) return
 
         acceptingAnswers = false
-        // const selectedOption = e.target
-        const selectedAnswer = e.target.innerHTML
-        console.log(selectedAnswer)
+        const selectedOption = e.target
+        const selectedAnswer = selectedOption.innerHTML
 
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
@@ -69,12 +67,12 @@ answerText.forEach(option => {
             incrementScore(ScorePoints)
         }
 
-        // selectedOption.parentElement.classList.add(classToApply)
+        selectedOption.parentElement.classList.add(classToApply)
 
         setTimeout(() => {
-            // selectedOption.parentElement.classList.remove(classToApply)
+            selectedOption.parentElement.classList.remove(classToApply)
             getNewQuestion()
-        }, 1000)
+        }, 500)
     })
 })
 
