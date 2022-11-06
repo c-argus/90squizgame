@@ -14,6 +14,20 @@
             <h1 class="game-title">90 &apos; s Quiz Game</h1>
         </div>
     </header>
+    <div class="game-area">
+        <div id="finish" class="center column">
+            <h1 id="finalScore">0</h1>
+            <form class="finish-form">
+                <h2 id="finish-text">Choose a nickname to be on the leaderboard!<i class="fa-solid fa-trophy"></i></h2>
+                <input type="text" name="name" id="nickname" placeholder="Enter your nickname">
+                <button class="btn" id="score-btn" type="submit" onclick="saveScore(event)" disabled>Save</button>
+            </form>
+        </div>
+    </div>
+
+     <!-- font awesome script -->
+     <script src="https://kit.fontawesome.com/20ca3611e4.js" crossorigin="anonymous"></script>
+
     
 </body>
 </html>
