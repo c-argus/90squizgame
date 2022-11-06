@@ -12,6 +12,8 @@ let availableQuestions = []
 var ScorePoints = 100
 let TotalQuestions = 10
 
+console.log(MyQuestions);
+
 startGame = () => {
     questionCounter = 0
     // score = 0
@@ -26,12 +28,10 @@ getNewQuestion = () => {
         return window.location.assign("finishpage.html")
     }
 
-    console.log(currentScore);
-    scoreText.innerText = currentScore.toString();
-
     if (!progressNumber) {
         return;
     }
+    scoreText.innerText = currentScore.toString();
     questionCounter++
     progressNumber.innerText = `Question ${questionCounter} of ${TotalQuestions}`
     progressBarFull.style.width = `${(questionCounter/TotalQuestions) * 100}%`
