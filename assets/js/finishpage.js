@@ -21,7 +21,7 @@ saveScore = e => {
         name: nickname.value
     }
 
-    scores.push(score)
+    scores.push(scoreText)
 
     scores.sort((a,b) => {
         return b.scoreText - a.scoreText
