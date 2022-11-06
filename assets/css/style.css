@@ -229,6 +229,23 @@ input::placeholder {
 #score-btn {
     border: none;
 }
+
+/* Scores Page */
+
+#highScoresList {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.scores {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+#finalscore {
+    text-align: center;
+}
+
 @media screen and (max-width: 820px) {
     .h1 {
         font-size: 0.5rem;
