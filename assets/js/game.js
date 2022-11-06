@@ -12,6 +12,7 @@ let questionCounter = 0
 let availableQuestions = []
 var successAudio = new Audio('/assets/audioClips/correctAnswer.wav');
 var failureAudio = new Audio('/assets/audioClips/wrongAnswer.wav');
+var completedAudio = new Audio('/assets/audioClips/completedAudio.wav');
 
 var ScorePoints = 100
 let TotalQuestions = 10
@@ -24,7 +25,6 @@ toggleAudio.addEventListener("click", e => {
 
 startGame = () => {
     questionCounter = 0
-    // score = 0
     availableQuestions = [...MyQuestions]
     getNewQuestion()
 }
@@ -32,6 +32,7 @@ startGame = () => {
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter > TotalQuestions) {
         localStorage.setItem('currentScore', currentScore);
+        completedAudio.play();
 
         return window.location.assign("finishpage.html")
     }
@@ -39,6 +40,7 @@ getNewQuestion = () => {
     if (!progressNumber) {
         return;
     }
+    localStorage.setItem('audioOn', audioOn);
     scoreText.innerText = currentScore.toString();
     questionCounter++
     progressNumber.innerText = `Question ${questionCounter} of ${TotalQuestions}`
@@ -73,9 +75,17 @@ answerText.forEach(option => {
 
         if (classToApply == 'correct') {
             incrementScore(ScorePoints)
-            if (audioOn) successAudio.play();
+            if (audioOn) {
+                failureAudio.pause();
+                successAudio.currentTime=0;
+                successAudio.play();
+            }
         } else {
-            if (audioOn) failureAudio.play();
+            if (audioOn) {
+                failureAudio.currentTime=0;
+                successAudio.pause();
+                failureAudio.play();
+            }
         }
 
         selectedOption.parentElement.classList.add(classToApply)
