@@ -4,6 +4,8 @@ var progressNumber = document.getElementById('progressNumber');
 var scoreText = document.getElementById('main-score');
 var progressBarFull = document.getElementById('progressBarFull');
 let toggleAudio = document.getElementById("audio-toggle");
+var gameArea = document.getElementById('game-area');
+var finishedMessage = document.getElementById('finished-message');
 let audioOn = true;
 let currentQuestion = {}
 let acceptingAnswers = true
@@ -16,8 +18,6 @@ var completedAudio = new Audio('/assets/audioClips/completedAudio.wav');
 
 var ScorePoints = 100
 let TotalQuestions = 10
-
-console.log(MyQuestions);
 
 toggleAudio.addEventListener("click", e => {
     (audioOn)? audioOn = false : audioOn = true;
@@ -33,8 +33,12 @@ getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter > TotalQuestions) {
         localStorage.setItem('currentScore', currentScore);
         completedAudio.play();
-
-        return window.location.assign("finishpage.html")
+        gameArea.classList.add("hidden");
+        finishedMessage.innerHTML = "<h1>Congratulations</h1>"
+        finishedMessage.classList.add("finished");
+        setTimeout(() => {
+            return window.location.assign("finishpage.html");
+        }, 2000)
     }
 
     if (!progressNumber) {
@@ -48,15 +52,16 @@ getNewQuestion = () => {
 
     const MyQuestionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[MyQuestionsIndex]
-    console.log(currentQuestion);
-    question.innerText = currentQuestion.question
 
-    answerText.forEach(option => {
-        const availableAnswers = currentQuestion["options"]
-        const randomAnswer = Math.floor(Math.random() * availableAnswers.length)
-        option.innerText = currentQuestion["options"][randomAnswer]
-        availableAnswers.splice(randomAnswer, 1)
-    })
+    if (currentQuestion) {
+        question.innerText = currentQuestion.question
+        answerText.forEach(option => {
+            const availableAnswers = currentQuestion["options"]
+            const randomAnswer = Math.floor(Math.random() * availableAnswers.length)
+            option.innerText = currentQuestion["options"][randomAnswer]
+            availableAnswers.splice(randomAnswer, 1)
+        })
+    }
 
     availableQuestions.splice(MyQuestionsIndex, 1)
 

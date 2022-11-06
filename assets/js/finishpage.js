@@ -9,14 +9,6 @@ var completedAudio = new Audio('/assets/audioClips/completedAudio.wav');
 
 finalScore.innerText = currentScore.toString();
 
-console.log(audioState);
-
-document.autoplay = true;
-
-document.addEventListener("DOMContentLoaded", function() {
-    (audioState)? completedAudio.play(): null;
-})
-
 nickname.addEventListener('keyup', () => {
     scorebtn.disabled = !nickname.value 
 })

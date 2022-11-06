@@ -278,6 +278,14 @@ input::placeholder {
     min-width: calc(35% - 150px);
 }
 
+.hidden {
+    visibility: hidden;
+}
+
+.finished {
+    padding: 25%;
+}
+
 .switch {
     position: relative;
     display: inline-block;
