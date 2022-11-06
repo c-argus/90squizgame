@@ -13,21 +13,21 @@ nickname.addEventListener('keyup', () => {
     scorebtn.disabled = !nickname.value 
 })
 
-saveHighScore = e => {
+saveScore = e => {
     e.preventDefault()
 
-    const score = {
-        score: currentScore,
+    const scoreText = {
+        scoreText: currentScore,
         name: nickname.value
     }
 
     scores.push(score)
 
-    scores.sort(a,b) => {
-        return b.score - a.score
-    }
+    scores.sort((a,b) => {
+        return b.scoreText - a.scoreText
+    })
 
     scores.splice(5)
     localStorage.setItem('scores', JSON.stringify(scores))
-    window.location.assign('/index.html')
+    window.location.assign('/')
 }
