@@ -3,11 +3,14 @@ var answerText = Array.from(document.getElementsByClassName('answer-text'));
 var progressNumber = document.getElementById('progressNumber');
 var scoreText = document.getElementById('main-score');
 var progressBarFull = document.getElementById('progressBarFull');
+let toggleButton = document.getElementById("audio-toggle");
 let currentQuestion = {}
 let acceptingAnswers = true
 let currentScore = 0
 let questionCounter = 0
 let availableQuestions = []
+var successAudio = new Audio('/assets/audioClips/correctAnswer.wav');
+var failureAudio = new Audio('/assets/audioClips/wrongAnswer.wav');
 
 var ScorePoints = 100
 let TotalQuestions = 10
@@ -65,6 +68,9 @@ answerText.forEach(option => {
 
         if (classToApply == 'correct') {
             incrementScore(ScorePoints)
+            successAudio.play()
+        } else {
+            failureAudio.play()
         }
 
         selectedOption.parentElement.classList.add(classToApply)
