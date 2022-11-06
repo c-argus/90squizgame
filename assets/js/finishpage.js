@@ -1,13 +1,14 @@
 var nickname = document.getElementById('nickname')
 var scorebtn = document.getElementById('scorebtn')
-var finalScore = document.getElementById('nickname')
-var currentScore = document.getElementById('currentScore')
+var finalScore = document.getElementById('finalScore')
+// var currentScore = document.getElementById('currentScore')
 
 var scores = JSON.parse(localStorage.getItem('scores')) || []
+var currentScore = localStorage.getItem('currentScore');
 
 var maxHighScores = 5
 
-finalScore.innerText = currentScore
+finalScore.innerText = currentScore.toString();
 
 nickname.addEventListener('keyup', () => {
     scorebtn.disabled = !nickname.value 

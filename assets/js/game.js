@@ -3,10 +3,9 @@ var answerText = Array.from(document.getElementsByClassName('answer-text'));
 var progressNumber = document.getElementById('progressNumber');
 var scoreText = document.getElementById('main-score');
 var progressBarFull = document.getElementById('progressBarFull');
-console.log(progressNumber);
 let currentQuestion = {}
 let acceptingAnswers = true
-let score = 0
+let currentScore = 0
 let questionCounter = 0
 let availableQuestions = []
 
@@ -15,18 +14,24 @@ let TotalQuestions = 10
 
 startGame = () => {
     questionCounter = 0
-    score = 0
+    // score = 0
     availableQuestions = [...MyQuestions]
     getNewQuestion()
 }
 
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter > TotalQuestions) {
-        localStorage.setItem('currentScore', score)
+        localStorage.setItem('currentScore', currentScore);
 
         return window.location.assign("finishpage.html")
     }
 
+    console.log(currentScore);
+    scoreText.innerText = currentScore.toString();
+
+    if (!progressNumber) {
+        return;
+    }
     questionCounter++
     progressNumber.innerText = `Question ${questionCounter} of ${TotalQuestions}`
     progressBarFull.style.width = `${(questionCounter/TotalQuestions) * 100}%`
@@ -69,8 +74,8 @@ answerText.forEach(option => {
 })
 
 incrementScore = num => {
-    score += num
-    scoreText.innerText = score
+    currentScore += num;
+    // console.log(currentScore);
 }
 
 startGame()
