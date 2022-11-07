@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Guntur&family=Merriweather+Sans&family=Monoton&family=Viga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Hind+Guntur&family=Merriweather+Sans&family=Monoton&family=Viga&display=swap');
 
 body {
     background-color: #8E4162;
@@ -41,6 +41,15 @@ h2 {
     font-family: Viga, Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 400;
     margin-bottom: 2rem;
+    text-shadow: 1px 1px rgb(76, 59, 31);
+}
+
+h3 {
+    font-family: Dancing Script, 'Courier New', Courier, monospace;
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: center;
+    color: #C7E8F3;
     text-shadow: 1px 1px rgb(76, 59, 31);
 }
 
@@ -248,12 +257,6 @@ input::placeholder {
 
 /* Toggle switch ofor audio */
 
-.audio-toggle {
-    justify-content: space-between;
-    align-content: center;
-    align-items: center;
-}
-
 .hidden {
     visibility: hidden;
 }
@@ -266,11 +269,6 @@ input::placeholder {
     padding: 1rem;
 }
 
-.audio {
-    margin: 1rem;
-    display: ruby-base-container;
-}
-  
 .switch input { 
     opacity: 0;
     width: 0;
@@ -354,3 +352,5 @@ input:checked + .slider:before {
         margin-top: 0.5rem;
     }
 }
+
+
