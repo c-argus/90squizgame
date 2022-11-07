@@ -21,7 +21,15 @@ let TotalQuestions = 10
 
 toggleAudio.addEventListener("click", e => {
     (audioOn)? audioOn = false : audioOn = true;
+
+    if (audioOn = false) {
+        (completedAudio) = true;
+    } else {
+        (completedAudio) = false;
+    }
 })
+
+
 
 startGame = () => {
     questionCounter = 0
@@ -32,13 +40,13 @@ startGame = () => {
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter > TotalQuestions) {
         localStorage.setItem('currentScore', currentScore);
-        completedAudio.play();
         gameArea.classList.add("hidden");
-        finishedMessage.innerHTML = "<h1>Congratulations</h1>"
+        finishedMessage.innerHTML = "<h1>Thanks for playing!</h1>"
         finishedMessage.classList.add("finished");
         setTimeout(() => {
             return window.location.assign("finishpage.html");
         }, 2000)
+        completedAudio.play();
     }
 
     if (!progressNumber) {

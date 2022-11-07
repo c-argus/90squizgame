@@ -327,7 +327,10 @@ input:checked + .slider:before {
 
 .finished {
     padding: 25%;
+    justify-content: center;
 }
+
+/* Media query */
 
 @media screen and (max-width: 820px) {
     .h1 {
