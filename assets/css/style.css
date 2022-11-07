@@ -249,12 +249,9 @@ input::placeholder {
 /* Toggle switch ofor audio */
 
 .audio-toggle {
-    display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-content: center;
     align-items: center;
-    justify-content: space-between;
-    min-width: calc(35% - 150px);
 }
 
 .hidden {
@@ -266,7 +263,12 @@ input::placeholder {
     display: inline-block;
     width: 60px;
     height: 34px;
+    padding: 1rem;
+}
 
+.audio {
+    margin: 1rem;
+    display: ruby-base-container;
 }
   
 .switch input { 
