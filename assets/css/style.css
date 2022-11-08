@@ -51,7 +51,8 @@ h3 {
     text-align: center;
     color: #C7E8F3;
     text-shadow: 1px 1px rgb(76, 59, 31);
-    background-color: #4d3157;
+    justify-content: center;
+    display: flex;
 }
 
 .game-area {
@@ -258,6 +259,11 @@ input::placeholder {
 
 /* Toggle switch ofor audio */
 
+#sound-btn {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
 .hidden {
     visibility: hidden;
 }
@@ -283,15 +289,16 @@ input::placeholder {
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 34px;
+    height: 1.5rem;
 }
   
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
+    height: 1.3rem;
+    width: 1.3rem;
+    left: 2px;
+    bottom: 2px;
     background-color: #8e4162;
     transition: .4s;
     border-radius: 50px;
@@ -306,9 +313,9 @@ input:focus + .slider {
 }
   
 input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(36px);
+    -ms-transform: translateX(36px);
+    transform: translateX(36px);
 }
   
 /* Rounded sliders */
@@ -330,24 +337,37 @@ input:checked + .slider:before {
 
 /* Media query */
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 912px) {
     .h1 {
         font-size: 0.5rem;
+        justify-content: center;
     }
     .answer-container {
         min-width: 10rem;
     }
+    h3 {
+        min-width: 10rem;
+        text-align: center;
+        margin-top: 6rem;
+        justify-content: center;
+    }
 }
 
-@media (min-width: 200px) {
+@media (min-width: 280px) {
     header {
         margin-top: 0;
     }
     h1 {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
     .game-title {
         margin-top: 0.5rem;
+    }
+    #progressBar {
+        margin-top: 0.5rem;
+    }
+    #sound-btn {
+        margin-bottom: 0.2rem;
     }
 }
 
