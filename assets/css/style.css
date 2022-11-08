@@ -29,11 +29,12 @@ header {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
     font-family: Merriweather Sans, Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 500;
     text-shadow: 1px 1px rgb(76, 59, 31);
+    display: flex;
 }
 
 h2 {
@@ -338,9 +339,8 @@ input:checked + .slider:before {
 /* Media query */
 
 @media screen and (max-width: 912px) {
-    .h1 {
-        font-size: 0.5rem;
-        justify-content: center;
+    #question {
+        font-size: 5.5vw;
     }
     .answer-container {
         min-width: 10rem;
@@ -351,14 +351,17 @@ input:checked + .slider:before {
         margin-top: 6rem;
         justify-content: center;
     }
+    #sound-btn {
+        text-align: center;
+    }
 }
 
 @media (min-width: 280px) {
+    #question {
+        font-size: 5.8vw;
+    }
     header {
         margin-top: 0;
-    }
-    h1 {
-        font-size: 1.5rem;
     }
     .game-title {
         margin-top: 0.5rem;
@@ -368,6 +371,19 @@ input:checked + .slider:before {
     }
     #sound-btn {
         margin-bottom: 0.2rem;
+    }
+    .display-prefix {
+        font-size: 4vw;
+    }
+    .display-item {
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    #question {
+        padding: 0 1rem 0 1.5rem;
+        font-size: 8vw;
     }
 }
 
