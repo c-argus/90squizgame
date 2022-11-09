@@ -5,4 +5,4 @@ This is a general knowledge quiz of the 90's. To test how much do you know or re
 
 [Link to the live Website](https://c-argus.github.io/90squizgame/)
 
-![Am I Responsive](images/AmIResponsive.png)
+![Am I Responsive](assets/images/AmIResponsive.pngimages/AmIResponsive.png)
