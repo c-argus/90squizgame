@@ -12,15 +12,15 @@ let acceptingAnswers = true
 let currentScore = 0
 let questionCounter = 0
 let availableQuestions = []
-var successAudio = new Audio('/assets/audioClips/correctAnswer.wav');
-var failureAudio = new Audio('/assets/audioClips/wrongAnswer.wav');
-var completedAudio = new Audio('/assets/audioClips/completedAudio.wav');
+var successAudio = new Audio('assets/audioClips/correctAnswer.wav');
+var failureAudio = new Audio('assets/audioClips/wrongAnswer.wav');
+var completedAudio = new Audio('assets/audioClips/completedAudio.wav');
 
 var ScorePoints = 100
 let TotalQuestions = 10
 
 toggleAudio.addEventListener("click", e => {
-    (audioOn)? audioOn = false : audioOn = true;
+    audioOn = !audioOn;
 
     if (audioOn = false) {
         (completedAudio) = true;

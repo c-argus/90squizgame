@@ -5,7 +5,7 @@ var scores = JSON.parse(localStorage.getItem('scores')) || []
 var currentScore = localStorage.getItem('currentScore');
 let audioState = localStorage.getItem('audioOn');
 var maxHighScores = 5
-var completedAudio = new Audio('/assets/audioClips/completedAudio.wav');
+var completedAudio = new Audio('assets/audioClips/completedAudio.wav');
 
 finalScore.innerText = currentScore.toString();
 
