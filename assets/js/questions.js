@@ -175,28 +175,78 @@ let MyQuestions = [{
     answer:"Breakfast at Tiffany's",
  },
  {
-    question: "Any true 90s aficionado should immediately know the band of brothers behind the hit “MMMBop”.",
+    question: "Any true 90s aficionado should immediately know the band of brothers behind the hit “MMMBop”?",
     options: ["Hanson", "Backstreet Boys", "NSYNC", "S Club 7"],
     answer:"Hanson",
  },
  {
-    question: "",
-    options: ["", "", "", ""],
-    answer:"",
+    question: "This video store chain was a wall street giant right up until it was swallowed whole by the emergence of Netflix and streaming?",
+    options: ["Ghostbusters", "Blockbuster", "100% Video", "Genius Video"],
+    answer:"Blockbuster",
  },
  {
-    question: "",
-    options: ["", "", "", ""],
-    answer:"",
+    question: "In classrooms in the days before flat screen TVs, teachers would utilize clear transparent paper and these devices to show their classes work on a white board?",
+    options: ["Interactive Whiteboards", "Mimeograph", "Overhead Projectors", "Multifunction Copiers and Printers"],
+    answer:"Overhead Projectors",
  },
  {
-    question: "",
-    options: ["", "", "", ""],
-    answer:"",
+    question: "This winner of 7 academy awards focused on Liam Neeson as he tried to trick Nazis during WW2 to save the lives of hundreds of Jewish innocents?",
+    options: ["The Thin Red Line", "Memphis Belle", "Schindler’s List", "Saving Private Ryan"],
+    answer:"Schindler’s List",
  },
  {
-    question: "",
-    options: ["", "", "", ""],
-    answer:"",
+    question: "Mel Gibson plays famed historical warrior William Wallace in this 90s action epic?",
+    options: ["The Patriot", "Braveheart", "Maverick", "Conspiracy Theory"],
+    answer:"Braveheart",
+ },
+ {
+    question: "One of the greatest twists of all time in film, this film’s most memorable quote is “I see dead people”?",
+    options: ["The 6th Sense", "Tha Past Tense", "The Common Sense", "The Sense 8"],
+    answer:"The 6th Sense",
+ },
+ {
+   question: "Featuring the most sensual clay shaping scene in history, this film featured Patrick Swayze and a haunted Demi Moore?",
+    options: ["Phantom", "Ghost", "Spirit", "Apparition"],
+    answer:"Ghost",
+ },
+ {
+    question: "A brilliant play on Plato’s “Allegory of the Cave”, this film bended minds with Keanu Reeves in 1999?",
+    options: ["Tha Array", "The Grid", "The Matrix", "The Table"],
+    answer:"The Matrix",
+ },
+ {
+    question: "Which country won the World Cup in 1994?",
+    options: ["Brazil", "Argentina", "Paraguay", "Chile"],
+    answer:"Brazil",
+ },
+ {
+    question: "New York city was the backdrop for this wildly popular 90s comedy which launched the careers of stars like Jennifer Aniston, Courtney Cox and Matthew Perry?",
+    options: ["Friends", "BFF", "Familiar", "Colleague"],
+    answer:"Friends",
+ },
+ {
+    question: "Maybe the original “teen drama”, this show revolutionized television by tackling prickly topics like addiction, eating disorders, teen pregnancy and more as it spawned a generation of copycats?",
+    options: ["Beverly Hills, 90210", " Los Angeles, 90210", "San Diego, 90210", "San Francisco, 90210"],
+    answer:"Beverly Hills, 90210",
+ },
+ {
+    question: "This 90s brunette heart throb starred in films like I Know What You Did Last Summer, and Can’t Hardly Wait?",
+    options: ["Jennifer Love Hewitt", "Jennifer Lawrence", "Jennifer Aniston", "Jennifer Connelly"],
+    answer:"Jennifer Love Hewitt",
+ },
+ {
+    question: "“Waterfalls” is the most well known song by this iconic R&B group?",
+    options: ["Total", "SWV", "TLC", "En Vogue"],
+    answer:"TLC",
+ },
+ {
+    question: "This latin heart throb was a 90s sensation with his hit that translates to “Living the Crazy Life”?",
+    options: ["Luis Miguel", "Enrique Iglesias", "Ricky Martin", "Alejandro Sanz"],
+    answer:"Ricky Martin",
+ },
+ {
+    question: "The horrifying mass shooting at this high school in Colorado would sadly be the first many mass casualty incidents in US Schools?",
+    options: ["Silver Creek", "Skyline", "Peak to Peak", "Columbine"],
+    answer:"Columbine",
  }
 ]
