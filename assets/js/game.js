@@ -62,10 +62,10 @@ getNewQuestion = () => {
     if (currentQuestion) {
         question.innerText = currentQuestion.question;
         answerText.forEach(option => {
-            const availableAnswers = currentQuestion["options"];
-            const randomAnswer = Math.floor(Math.random() * availableAnswers.length);
-            option.innerText = currentQuestion["options"][randomAnswer];
-            availableAnswers.splice(randomAnswer, 1);
+            const availableAnswers = currentQuestion["options"]
+            const randomAnswer = Math.floor(Math.random() * availableAnswers.length)
+            option.innerText = currentQuestion["options"][randomAnswer]
+            availableAnswers.splice(randomAnswer, 1)
         })
     }
 
