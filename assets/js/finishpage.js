@@ -1,6 +1,6 @@
 var nickname = document.getElementById('nickname');
 var scorebtn = document.getElementById('scorebtn');
-var finalScore = document.getElementById('finalScor;e')
+var finalScore = document.getElementById('finalScore');
 var scores = JSON.parse(localStorage.getItem('scores')) || [];
 var currentScore = localStorage.getItem('currentScore');
 let audioState = localStorage.getItem('audioOn');
@@ -18,7 +18,7 @@ saveScore = e => {
 
     const scoreText = {
         scoreText: currentScore,
-        name: nickname.value;
+        name: nickname.value
     }
 
     scores.push(scoreText);
