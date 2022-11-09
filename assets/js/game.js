@@ -7,17 +7,17 @@ let toggleAudio = document.getElementById("audio-toggle");
 var gameArea = document.getElementById('game-area');
 var finishedMessage = document.getElementById('finished-message');
 let audioOn = true;
-let currentQuestion = {}
-let acceptingAnswers = true
-let currentScore = 0
-let questionCounter = 0
-let availableQuestions = []
+let currentQuestion = {};
+let acceptingAnswers = true;
+let currentScore = 0;
+let questionCounter = 0;
+let availableQuestions = [];
 var successAudio = new Audio('assets/audioClips/correctAnswer.wav');
 var failureAudio = new Audio('assets/audioClips/wrongAnswer.wav');
 var completedAudio = new Audio('assets/audioClips/completedAudio.wav');
 
-var ScorePoints = 100
-let TotalQuestions = 10
+var ScorePoints = 100;
+let TotalQuestions = 10;
 
 toggleAudio.addEventListener("click", e => {
     audioOn = !audioOn;
@@ -32,16 +32,16 @@ toggleAudio.addEventListener("click", e => {
 
 
 startGame = () => {
-    questionCounter = 0
-    availableQuestions = [...MyQuestions]
-    getNewQuestion()
+    questionCounter = 0;
+    availableQuestions = [...MyQuestions];
+    getNewQuestion();
 }
 
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= TotalQuestions) {
         localStorage.setItem('currentScore', currentScore);
         gameArea.classList.add("hidden");
-        finishedMessage.innerHTML = "<h3>Thanks for playing!</h3>"
+        finishedMessage.innerHTML = "<h3>Thanks for playing!</h3>";
         finishedMessage.classList.add("finished");
         setTimeout(() => {
             return window.location.assign("finishpage.html");
@@ -55,25 +55,25 @@ getNewQuestion = () => {
     localStorage.setItem('audioOn', audioOn);
     scoreText.innerText = currentScore.toString();
     questionCounter++
-    progressNumber.innerText = `Question ${questionCounter} of ${TotalQuestions}`
-    progressBarFull.style.width = `${(questionCounter/10) * 100}%`
+    progressNumber.innerText = `Question ${questionCounter} of ${TotalQuestions}`;
+    progressBarFull.style.width = `${(questionCounter/10) * 100}%`;
 
-    const MyQuestionsIndex = Math.floor(Math.random() * availableQuestions.length)
-    currentQuestion = availableQuestions[MyQuestionsIndex]
+    const MyQuestionsIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[MyQuestionsIndex];
 
     if (currentQuestion) {
-        question.innerText = currentQuestion.question
+        question.innerText = currentQuestion.question;
         answerText.forEach(option => {
-            const availableAnswers = currentQuestion["options"]
-            const randomAnswer = Math.floor(Math.random() * availableAnswers.length)
-            option.innerText = currentQuestion["options"][randomAnswer]
-            availableAnswers.splice(randomAnswer, 1)
+            const availableAnswers = currentQuestion["options"];
+            const randomAnswer = Math.floor(Math.random() * availableAnswers.length);
+            option.innerText = currentQuestion["options"][randomAnswer];
+            availableAnswers.splice(randomAnswer, 1);
         })
     }
 
-    availableQuestions.splice(MyQuestionsIndex, 1)
+    availableQuestions.splice(MyQuestionsIndex, 1);
 
-    acceptingAnswers = true
+    acceptingAnswers = true;
 }
 
 answerText.forEach(option => {
