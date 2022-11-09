@@ -21,13 +21,13 @@ saveScore = e => {
         name: nickname.value
     }
 
-    scores.push(scoreText);
+    scores.push(scoreText)
 
     scores.sort((a,b) => {
-        return b.scoreText - a.scoreText;
+        return b.scoreText - a.scoreText
     })
 
     scores.splice(5)
-    localStorage.setItem('scores', JSON.stringify(scores));
-    window.location.assign('./scorespage.html');
+    localStorage.setItem('scores', JSON.stringify(scores))
+    window.location.assign('./scorespage.html')
 }
