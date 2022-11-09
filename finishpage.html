@@ -20,7 +20,7 @@
             <form class="finish-form">
                 <h2 id="finish-text">Choose a nickname to be on the leaderboard!<i class="fa-solid fa-trophy"></i></h2>
                 <input type="text" name="name" id="nickname" placeholder="Enter your nickname">
-                <button class="btn" id="scorebtn" type="submit" onclick="saveScore(event)" disabled>Save</button>
+                <button class="btn" id="scorebtn" type="submit" onclick="saveScore(event)" onsubmit="event.preventDefault()">Save</button>
             </form>
             <a href="game.html" class="btn">Play Again</a>
             <a href="index.html" class="btn">Home</a>
