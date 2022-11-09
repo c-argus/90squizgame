@@ -38,7 +38,7 @@ startGame = () => {
 }
 
 getNewQuestion = () => {
-    if (availableQuestions.length === 0 || questionCounter > TotalQuestions) {
+    if (availableQuestions.length === 0 || questionCounter >= TotalQuestions) {
         localStorage.setItem('currentScore', currentScore);
         gameArea.classList.add("hidden");
         finishedMessage.innerHTML = "<h3>Thanks for playing!</h3>"
@@ -56,7 +56,7 @@ getNewQuestion = () => {
     scoreText.innerText = currentScore.toString();
     questionCounter++
     progressNumber.innerText = `Question ${questionCounter} of ${TotalQuestions}`
-    progressBarFull.style.width = `${(questionCounter/TotalQuestions) * 100}%`
+    progressBarFull.style.width = `${(questionCounter/10) * 100}%`
 
     const MyQuestionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[MyQuestionsIndex]

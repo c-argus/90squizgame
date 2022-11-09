@@ -49,4 +49,154 @@ let MyQuestions = [{
      options: ["Their Faith", "Their Fame", "Their Voice", "Their Religion"],
      answer: "Their Religion",
  },
+ {
+    question: "What video game console was the best-selling console of the 1990’s?",
+    options: ["Sony Playstation", "Xbox", "Nintendo", "Sega"],
+    answer:"Sony Playstation",
+ },
+ {
+    question: "What year was the World Wide Web first introduced?",
+    options: ["1990", "1992", "1991", "1993"],
+    answer:"1991",
+ },
+ {
+    question: "Which website was first introduced in 1998?",
+    options: ["Facebook", "YouTube", "Google", "Orkut"],
+    answer:"Google",
+ },
+ {
+    question: "In the 1990’s, scientists managed to clone a sheep. What was the sheep’s name?",
+    options: ["Mary", "Anna", "Dolly", "Dorothy"],
+    answer:"Dolly",
+ },
+ {
+    question: "Pokemon was a cultural phenomenon (and still is today). What does Pikachu evolve into?",
+    options: ["Raichu", "Jigglypuff", "Machoke", "Rapidash"],
+    answer:"Raichu",
+ },
+ {
+    question: "What was one of the most popular ways to contact someone during the 1990’s?",
+    options: ["Send a letter", "Smoke signals", "Using a pager", "Drums"],
+    answer:"Using a pager",
+ },
+ {
+    question: "What is the name of the fashion accessory worn by women around the neck?",
+    options: ["Belts", "Necklaces", "Chokers", "Bracelets"],
+    answer:"Chokers",
+ },
+ {
+    question: "What patterned shirt was popularized by bands like Nirvana and *NSYNC?",
+    options: ["Croche shirts", "Leather shirts", "Denim shirts", "Flannel shirts"],
+    answer:"Flannel shirts",
+ },
+ {
+    question: "What was the name of the ballad released by Extreme in 1991?",
+    options: ["Play with Me", "Hole Hearted", "More Than Words", "He-Man Woman Hater"],
+    answer:"More Than Words",
+ },
+ {
+    question: "The band Semisonic were a one-hit-wonder from the 1990’s. What was their hit called?",
+    options: ["Closing Time", "Closing Doors", "Closing Relationships", "Closing Deals"],
+    answer:"Closing Time",
+ },
+ {
+    question: "Smells Like Teen Spirit is an iconic song from the 1990’s. What is it inadvertently about?",
+    options: ["Deodorant", "Shampoo", "Conditioner", "Soap"],
+    answer:"Deodorant",
+ },
+ {
+    question: "Who came up with the name ‘*NSYNC’?",
+    options: ["JC Chasez's mon", "Joey Fatone's mom", "Justin Timberlake’s mom", "Lance Bass's mom"],
+    answer:"Justin Timberlake’s mom",
+ },
+ {
+    question: "How many members did popular boyband Backstreet Boys have?",
+    options: ["6", "3", "5", "4"],
+    answer:"5",
+ },
+ {
+    question: "What is the name of the band that released a song about Barbie, who were also sued by Mattel?",
+    options: ["Ocean", "River", "Aqua", "Sea"],
+    answer:"Aqua",
+ },
+ {
+    question: "What single did Christina Aguilera hit the top spot on the Billboard Hot 100 with?",
+    options: ["Genie In A Bottle", "What a Girl Wants", "I Turn to You", "Come On Over Baby (All I Want Is You)"],
+    answer:"Genie In A Bottle",
+ },
+ {
+    question: "Who wrote the song ‘Nothing Compares to You’, which Sinead O’Connor had a hit with in 1990?",
+    options: ["Elton John", "Queen", "Prince", "ABBA"],
+    answer:"Prince",
+ },
+ {
+    question: "Which two British bands are commonly put into the genre bracket of Britpop and were rivals throughout the 1990’s?",
+    options: ["The Verve and Take That", "Oasis and Blur", "Keane and Radiohead", "Five and S Club 7"],
+    answer:"Oasis and Blur",
+ },
+ {
+    question: "What is Woody and Buzz Lightyear’s owner called in Toy Story?",
+    options: ["Mike", "Andy", "Daniel", "Conan"],
+    answer:"Andy",
+ },
+ {
+    question: "Which film was the highest-grossing film of 1994?",
+    options: ["The Lion King", "A Bug's Life", "Hercules", "Aladdin"],
+    answer:"The Lion King",
+ },
+ {
+    question: "Which movie, released in 1997, was the first movie to gross more than $1 billion?",
+    options: ["Jurassic Park", "Titanic", "Liar Liar", "Men in Black"],
+    answer:"Titanic",
+ },
+ {
+    question: "What is the name of the film that McCauley Culkin got $1 million for?",
+    options: ["My Girl", "Home Alone", "Richie Rich", "The Good Son"],
+    answer:"My Girl",
+ },
+ {
+    question: "What was the first animated feature film to nominated for a Best Picture Oscar?",
+    options: ["Beauty and the Beast", "The Lion King", "Mulan", "Pocahontas"],
+    answer:"Beauty and the Beast",
+ },
+ {
+    question: "Power Rangers was banned in what country until 2011?",
+    options: ["Ireland", "Brazil", "New Zealand", "Australia"],
+    answer:"New Zealand",
+ },
+ {
+    question: "Genetic engineering introduced what color roses for the first time?",
+    options: ["Red", "Green", "Blue", "Yellow"],
+    answer:"Blue",
+ },
+ {
+    question: "What classic Audrey Hepburn film was the title of a 1995 one-hit wonder?",
+    options: ["Breakfast at Tiffany's", "Roman Holiday", "My Fair Lady", "Sabrina"],
+    answer:"Breakfast at Tiffany's",
+ },
+ {
+    question: "Any true 90s aficionado should immediately know the band of brothers behind the hit “MMMBop”.",
+    options: ["Hanson", "Backstreet Boys", "NSYNC", "S Club 7"],
+    answer:"Hanson",
+ },
+ {
+    question: "",
+    options: ["", "", "", ""],
+    answer:"",
+ },
+ {
+    question: "",
+    options: ["", "", "", ""],
+    answer:"",
+ },
+ {
+    question: "",
+    options: ["", "", "", ""],
+    answer:"",
+ },
+ {
+    question: "",
+    options: ["", "", "", ""],
+    answer:"",
+ }
 ]
