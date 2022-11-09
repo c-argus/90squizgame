@@ -67,6 +67,10 @@ h3 {
     padding: 2rem;
 }
 
+#game {
+    width: min-content;
+}
+
 .column {
     display: flex;
     flex-direction: column;
@@ -320,11 +324,7 @@ input:checked + .slider:before {
 }
   
 /* Rounded sliders */
-
-.slider.round {
-    
-}
-  
+ 
 .slider.round:before {
     border-radius: 50%;
 }
@@ -397,4 +397,10 @@ input:checked + .slider:before {
     }
 }
 
+@media screen and (min-width: 640px) {
+    .game-area{
+       width:100%;
+       max-height: 140rem;
+    }
+}
 
