@@ -14,7 +14,7 @@ nickname.addEventListener('keyup', () => {
 })
 
 saveScore = e => {
-    e.preventDefault();
+    e.preventDefault()
 
     const scoreText = {
         scoreText: currentScore,
