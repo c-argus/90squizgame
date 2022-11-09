@@ -106,7 +106,7 @@ answerText.forEach(option => {
         setTimeout(() => {
             selectedOption.parentElement.classList.remove(classToApply)
             getNewQuestion()
-        }, 500)
+        }, 700)
     })
 })
 
