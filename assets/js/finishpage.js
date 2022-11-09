@@ -10,7 +10,7 @@ var completedAudio = new Audio('assets/audioClips/completedAudio.wav');
 finalScore.innerText = currentScore.toString();
 
 nickname.addEventListener('keyup', () => {
-    scorebtn.disabled = !nickname.value; 
+    scorebtn.disabled = !nickname.value 
 })
 
 saveScore = e => {

@@ -29,8 +29,6 @@ toggleAudio.addEventListener("click", e => {
     }
 })
 
-
-
 startGame = () => {
     questionCounter = 0;
     availableQuestions = [...MyQuestions];
@@ -112,7 +110,6 @@ answerText.forEach(option => {
 
 incrementScore = num => {
     currentScore += num;
-    // console.log(currentScore);
 }
 
 startGame()
