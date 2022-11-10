@@ -83,6 +83,14 @@ From that page the user can return to the Home page.
 * Add more questions but using images, videos and sound to make the user experience more plesant and fun.
 
 ## Testing
+
+* Internal Links
+  - All internal links were tested to make sure that all pages are correctly connected.
+  - Navigations links brings the user to the relevant pages.
+
+* Forms
+  - All the forms were tested and works perfectly, it requires entries in every field, will only save the nickname if provided, and the save button works.
+
 ### JSHint
 * No errors reported using JSHint website when using the following parameters (entered at the top of the code section):
 
@@ -91,6 +99,13 @@ From that page the user can return to the Home page.
 // can be overwritten
 /*global currentQuiz:true */
 ```
+![JSHintQuestions](assets/images/JSHintQuestions.png)
+![JSHintGame](assets/images/JSHintGame.png)
+![JSHintEnd](assets/images/JSHintEnd.png)
+![JSHintLeader](assets/images/JSHintLeader.png)
+
+### CSS3 validator - Pass
+
 
 
 
