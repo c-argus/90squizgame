@@ -161,6 +161,32 @@ The website was published using [GitHub Pages](https://github.com/), using the s
 ## Bugs
 There are no identified bugs as at now.
 
+## Credits
+
+### Code
+* Gitpod was used to create a responsive HTML, CSS and JavaScript code. 
+* CodeInstitute Full Template was used to create the Gitpod workspace.
+* [How to Make a Quiz App by Brian Design](https://www.youtube.com/watch?v=f4fB9Xg2JEY&list=PLj7llf6L2DgLIv9_34_ZrJXzK6taZU9qd&index=3&t=3209s)
+
+### Content
+* All code was written by the author - Camila de Figueiredo.
+* Colour scheme was created using [Coolors](https://coolors.co/).
+* The icons in the Score Page and the Leaderboard Page were taken from [Font Awesome](https://fontawesome.com/).
+* Fonticon was taken from [FontIcon](https://gauger.io/fonticon/).
+* [Mixkit](https://mixkit.co/) for the alert sounds.
+* [83 Best 1990’s Trivia Questions and Answers](https://groupgames101.com/90s-trivia-questions/) and [90’s Trivia Questions](https://ponly.com/90s-trivia-questions/) for the questions.
+* [W3Schools](https://www.w3schools.com/) for extra knowledge.
+* To write up the README file the documents used as guidence were:
+  - Code Institute [Sample Project README.md](Sample Project README.md);
+  - [README Template](https://github.com/Code-Institute-Solutions/readme-template);
+  - [Basic writing and formatting syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+
+### Acknowledgements
+
+* Thank you to my mentor for the guidance and advices. 
+* Thank you to my parter that was very patient and supportive throughout the process of creation of this website.
+* Thank you to my friends and family that helped during the testing process.
+
 
 
 
