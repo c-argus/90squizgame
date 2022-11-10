@@ -107,11 +107,60 @@ From that page the user can return to the Home page.
 ### CSS3 validator - Pass
 [Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fc-argus.github.io%2F90squizgame%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
-###HTML validator
+### HTML validator
 * Home Page - [Results](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fc-argus.github.io%2F90squizgame%2F)
 * Questions Page - [Results](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fc-argus.github.io%2F90squizgame%2Fgame.html)
 * Score Page - [Results](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fc-argus.github.io%2F90squizgame%2Ffinishpage.html)
-* Leaderboard Page - [Results]
+* Leaderboard Page - [Results](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fc-argus.github.io%2F90squizgame%2Fscorespage.html)
+
+### Usability Testing
+
+* To test navigation and responsive tools, the website was shared with friends and family of different ages and different levels of computer/smart device knowledge. There were no issues idenfied regarding the simplicity of navigating the website.
+* The testers also verified that all buttons and links works as expected.
+
+### Compatibility Testing
+
+* The website was tested for responsiveness on Chrome DevTools. Different viewport sizes were simulated ranging from as small as iPhone 5 (320px) to large desktop sizes (1200px and above).
+
+* Browser Compatibility
+  - The website was tested and works as expected in different browsers, such as Firefox, Chrome, Brave and Safari.
+
+  ### Accessibility Testing
+
+* The colours and fonts chosen for each page are easy to read and accessible by running it though lighthouse in DevTools.
+
+  - *Home Page*
+
+  ![Lighthouse DevTools test results Home Page](assets/images/LighthouseHP.PNG)
+
+  - *Questions Page*
+
+  ![Lighthouse DevTools test result Questions Page](assets/images/LighthouseQuestion.PNG)
+
+  - *Final Score Page*
+
+  ![Lighthouse DevTools test result Final Score Page](assets/images/LighthouseScore.PNG)
+
+  - *Leaderboard Page*
+
+  ![Lighthouse DevTools test result Leaderboard](assets/images/LighthouseLeader.PNG)
+
+## Deployment
+
+### Publishing
+The website was published using [GitHub Pages](https://github.com/), using the steps presented:
+
+1. Go to the GitHub website and log in.
+2. On the left-hand side, you'll see all your repositories, select the appropriate one. ([Repository](https://github.com/c-argus/kids-in-the-kitchen) used for this project).
+3. Under the name of your chosen Repository you will see a ribbon of selections, click on *Settings* located on the right hand side.
+4. On the left side menu, located on **Code and automation** section you will find the link for **Pages**. 
+5. Once in GitHub Pages,  under the *Source* click on the dropdown and select *Deploy from a branch*, under the *Branch* click on the dropdown and select *main* and *Save*.
+6. Reload the page and you'll see the link of your published page displayed under *GitHub pages*. 
+7. It takes a few minutes for the site to be published.
+
+## Bugs
+There are no identified bugs as at now.
+
 
 
 
