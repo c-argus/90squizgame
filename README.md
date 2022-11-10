@@ -82,6 +82,17 @@ From that page the user can return to the Home page.
 * The user would get the option to choose the degree of difficulty of the quiz, like easy, medium, pro.
 * Add more questions but using images, videos and sound to make the user experience more plesant and fun.
 
+## Testing
+### JSHint
+* No errors reported using JSHint website when using the following parameters (entered at the top of the code section):
+
+```//jshint esversion:8
+// Tell JSHint the currentQuiz global variable
+// can be overwritten
+/*global currentQuiz:true */```
+
+
+
 
 
 

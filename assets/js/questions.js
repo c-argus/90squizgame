@@ -248,4 +248,4 @@ let MyQuestions = [{
     options: ["Silver Creek", "Skyline", "Peak to Peak", "Columbine"],
     answer:"Columbine",
  }
-]
+];
