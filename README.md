@@ -89,7 +89,8 @@ From that page the user can return to the Home page.
 ```//jshint esversion:8
 // Tell JSHint the currentQuiz global variable
 // can be overwritten
-/*global currentQuiz:true */```
+/*global currentQuiz:true */
+```
 
 
 
