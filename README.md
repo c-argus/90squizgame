@@ -105,6 +105,15 @@ From that page the user can return to the Home page.
 ![JSHintLeader](assets/images/JSHintLeader.png)
 
 ### CSS3 validator - Pass
+[Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fc-argus.github.io%2F90squizgame%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+###HTML validator
+* Home Page - [Results](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fc-argus.github.io%2F90squizgame%2F)
+* Questions Page - [Results](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fc-argus.github.io%2F90squizgame%2Fgame.html)
+* Score Page - [Results](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fc-argus.github.io%2F90squizgame%2Ffinishpage.html)
+* Leaderboard Page - [Results]
+
+
 
 
 
