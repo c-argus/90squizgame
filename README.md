@@ -51,7 +51,7 @@ The quiz game question bank holds 50 questions at the moment. When a user starts
 ### **Home Page**
 * The first screen is the home page. The title sit on the top of the quiz so the user can see  clearly the intentions of the page. The menu options contains two buttons:
 
-    * **Play**, to start the game and; 
+    * **Play**, to start the game; 
     * **Scores**, to see the leaderboard.
 
 The user can start the game whenever they are ready. The quiz's first question will not display until the user clicks on the button.
@@ -60,7 +60,7 @@ The user can start the game whenever they are ready. The quiz's first question w
 
 ### **Questions Page**
 For every question, the user will get four options to choose from, and one of these is the correct one. The quiz requires the user to select an answer before moving on to the next question.
-If the answer is correct, it will light up in green and the "correct answer sound" will buzz. If it's wrong it will light up in red and the "wrong answer sound will buzz". The code doesn't show which answers are correct if the user would like to retake the quiz.
+If the answer is correct, it will light up in green and the *correct answer sound* will buzz. If it's wrong it will light up in red and the *wrong answer sound* will buzz. The code doesn't show which answers are correct if the user would like to retake the quiz.
 When a user submits an answer, they can keep track of their score and how many questions were answered and how many are left.
 There's also a toggle button that permits the user to turn on and off the sounds as prefered. 
 
@@ -80,7 +80,7 @@ From that page the user can return to the Home page.
 
 ## Features Left to Implement
 * The user would get the option to choose the degree of difficulty of the quiz, like easy, medium, pro.
-* Add more questions but using images, videos and sound to make the user experience more plesant and fun.
+* Update the questions, using images, videos and sound to make the user experience more plesant and fun.
 
 ## Testing
 
