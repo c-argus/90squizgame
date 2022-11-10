@@ -7,7 +7,6 @@ let MyQuestions = [{
     question: "Tamagotchi’s were all the rage in the 1990’s. But what do the two Japanese words translate to?",
     options: ["Rice and Beans", "Salt and Vinegar", "Egg and Friend", "Eletronic and Friend"],
     answer: "Egg and Friend",
-
 },
  {
      question: "What was the name of the furry toy, popular throughout the 1990’s, that some people thought was spying on them?",
