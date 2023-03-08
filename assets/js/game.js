@@ -39,7 +39,7 @@ getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= TotalQuestions) {
         localStorage.setItem('currentScore', currentScore);
         gameArea.classList.add("hidden");
-        finishedMessage.innerHTML = "<h3>Thanks for playing!</h3>";
+        finishedMessage.innerHTML = "Thanks for playing!";
         finishedMessage.classList.add("finished");
         setTimeout(() => {
             return window.location.assign("finishpage.html");
