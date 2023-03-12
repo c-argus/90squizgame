@@ -29,6 +29,7 @@ toggleAudio.addEventListener("click", e => {
     }
 });
 
+// from the video
 startGame = () => {
     questionCounter = 0;
     availableQuestions = [...MyQuestions];
@@ -36,13 +37,13 @@ startGame = () => {
 };
 
 getNewQuestion = () => {
-    if (availableQuestions.length === 0 || questionCounter >= TotalQuestions) {
-        localStorage.setItem('currentScore', currentScore);
+    if (availableQuestions.length === 0 || questionCounter >= TotalQuestions) { // from the video
+        localStorage.setItem('currentScore', currentScore); // from the video
         gameArea.classList.add("hidden");
         finishedMessage.innerHTML = "Thanks for playing!";
         finishedMessage.classList.add("finished");
         setTimeout(() => {
-            return window.location.assign("finishpage.html");
+            return window.location.assign("finishpage.html"); // from the video
         }, 2000);
         completedAudio.play();
     }
@@ -52,11 +53,11 @@ getNewQuestion = () => {
     }
     localStorage.setItem('audioOn', audioOn);
     scoreText.innerText = currentScore.toString();
-    questionCounter++;
-    progressNumber.innerText = `Question ${questionCounter} of ${TotalQuestions}`;
-    progressBarFull.style.width = `${(questionCounter/10) * 100}%`;
+    questionCounter++; // from the video
+    progressNumber.innerText = `Question ${questionCounter} of ${TotalQuestions}`; // from the video
+    progressBarFull.style.width = `${(questionCounter/10) * 100}%`; // from the video
 
-    const MyQuestionsIndex = Math.floor(Math.random() * availableQuestions.length);
+    const MyQuestionsIndex = Math.floor(Math.random() * availableQuestions.length); // from the video
     currentQuestion = availableQuestions[MyQuestionsIndex];
 
     if (currentQuestion) {
@@ -69,23 +70,23 @@ getNewQuestion = () => {
         });
     }
 
-    availableQuestions.splice(MyQuestionsIndex, 1);
+    availableQuestions.splice(MyQuestionsIndex, 1); // from the video
 
-    acceptingAnswers = true;
+    acceptingAnswers = true; // from the video
 };
 
-answerText.forEach(option => {
+answerText.forEach(option => {                          // from the video
     option.addEventListener("click", e => {
         if (!acceptingAnswers) return;
 
-        acceptingAnswers = false;
-        const selectedOption = e.target;
-        const selectedAnswer = selectedOption.innerHTML;
+        acceptingAnswers = false;                          // from the video
+        const selectedOption = e.target;                      // from the video
+        const selectedAnswer = selectedOption.innerHTML;          // from the video
 
-        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';  // from the video
 
-        if (classToApply == 'correct') {
-            incrementScore(ScorePoints);
+        if (classToApply == 'correct') {    // from the video
+            incrementScore(ScorePoints);       // from the video
             if (audioOn) {
                 failureAudio.pause();
                 successAudio.currentTime=0;
@@ -99,17 +100,17 @@ answerText.forEach(option => {
             }
         }
 
-        selectedOption.parentElement.classList.add(classToApply);
+        selectedOption.parentElement.classList.add(classToApply); // from the video
 
-        setTimeout(() => {
-            selectedOption.parentElement.classList.remove(classToApply);
-            getNewQuestion();
+        setTimeout(() => {                                             // from the video
+            selectedOption.parentElement.classList.remove(classToApply);  // from the video
+            getNewQuestion();                                         // from the video
         }, 500);
     });
 });
 
-incrementScore = num => {
-    currentScore += num;
+incrementScore = num => {  // from the video
+    currentScore += num;   // from the video
 };
 
-startGame();
+startGame();  // from the video
