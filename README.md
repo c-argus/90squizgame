@@ -169,7 +169,6 @@ There are no identified bugs as at now.
 * [How to Make a Quiz App by Brian Design](https://www.youtube.com/watch?v=f4fB9Xg2JEY&list=PLj7llf6L2DgLIv9_34_ZrJXzK6taZU9qd&index=3&t=3209s)
 
 ### Content
-* All code was written by the author - Camila de Figueiredo.
 * Colour scheme was created using [Coolors](https://coolors.co/).
 * The icons in the Score Page and the Leaderboard Page were taken from [Font Awesome](https://fontawesome.com/).
 * Fonticon was taken from [FontIcon](https://gauger.io/fonticon/).
