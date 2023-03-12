@@ -19,9 +19,11 @@ var completedAudio = new Audio('assets/audioClips/completedAudio.wav');
 var ScorePoints = 100;
 let TotalQuestions = 10;
 
+// add event listener to the toggle audio button
 toggleAudio.addEventListener("click", e => {
     audioOn = !audioOn;
 
+    // toggle the audio on/off depending on the current state
     if (audioOn = false) {
         (completedAudio) = true;
     } else {
@@ -40,6 +42,7 @@ getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= TotalQuestions) { // from the video
         localStorage.setItem('currentScore', currentScore); // from the video
         gameArea.classList.add("hidden");
+        // shows up a message when the game finishes
         finishedMessage.innerHTML = "Thanks for playing!";
         finishedMessage.classList.add("finished");
         setTimeout(() => {
@@ -48,6 +51,7 @@ getNewQuestion = () => {
         completedAudio.play();
     }
 
+    // update the score and progress bar
     if (!progressNumber) {
         return;
     }
@@ -57,6 +61,7 @@ getNewQuestion = () => {
     progressNumber.innerText = `Question ${questionCounter} of ${TotalQuestions}`; // from the video
     progressBarFull.style.width = `${(questionCounter/10) * 100}%`; // from the video
 
+    // get a random question from the question.js list
     const MyQuestionsIndex = Math.floor(Math.random() * availableQuestions.length); // from the video
     currentQuestion = availableQuestions[MyQuestionsIndex];
 
@@ -70,6 +75,7 @@ getNewQuestion = () => {
         });
     }
 
+    // remove the answered question from the available question list
     availableQuestions.splice(MyQuestionsIndex, 1); // from the video
 
     acceptingAnswers = true; // from the video
@@ -85,6 +91,7 @@ answerText.forEach(option => {                          // from the video
 
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';  // from the video
 
+        // if the answer is correct increment the score and play the success audio
         if (classToApply == 'correct') {    // from the video
             incrementScore(ScorePoints);       // from the video
             if (audioOn) {
