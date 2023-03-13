@@ -183,6 +183,10 @@ h3 {
     text-align: center;
 }
 
+.main-score {
+    font-size: 1.7rem;
+    text-align: center;
+}
 #progressBar {
     width: 12rem;
     height: 1rem;
@@ -245,7 +249,10 @@ input::placeholder {
 #scorebtn {
     border: none;
 }
-
+.score {
+    display: flex;
+    flex-direction: column;
+}
 /* Scores Page */
 
 #highScoresList {
