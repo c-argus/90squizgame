@@ -156,6 +156,11 @@ h3 {
     width: 100%
 }
 
+.question {
+    font-size: 1.7rem;
+    margin: 5px 0px 15px 0;
+}
+
 /* Correct and Incorrect answers */
 
 .correct {
@@ -187,6 +192,7 @@ h3 {
     font-size: 1.7rem;
     text-align: center;
 }
+
 #progressBar {
     width: 12rem;
     height: 1rem;
@@ -280,6 +286,11 @@ input::placeholder {
     visibility: hidden;
 }
 
+.audio-toggle {
+    display: flex;
+    flex-direction: column;
+}
+
 .switch {
     position: relative;
     display: inline-block;
@@ -337,7 +348,13 @@ input:checked + .slider:before {
 }
 
 /* Final message */
+.finished-message {
+    display: none;
+}
 
+.finished-message.finished {
+    display: block;
+}
 .finished {
     padding: 25%;
     justify-content: center;
@@ -388,7 +405,7 @@ input:checked + .slider:before {
         justify-content: center;
         font-size: 4rem;
     }
-    #question {
+    .question {
         margin-bottom: 1rem;
         font-size: 1.3rem;
     }

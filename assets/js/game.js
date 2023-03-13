@@ -1,61 +1,79 @@
+const questionEl = document.querySelector('.question');
+const answerText = Array.from(document.querySelectorAll('.answer-text'));
+
+const gameArea = document.getElementById('game-area');
 const scoreText = document.querySelector('.main-score');
+const toggleAudioEl = document.getElementById("audio-toggle");
+const progressNumber = document.getElementById('progressNumber');
+const progressBarFull = document.getElementById('progressBarFull');
+const finishedMessage = document.querySelector('.finished-message');
+
 let audioOn = true;
 let currentQuestion = {};
 let acceptingAnswers = true;
 let currentScore = 0;
 let questionCounter = 0;
 let availableQuestions = [];
-var successAudio = new Audio('assets/audioClips/correctAnswer.wav');
-var failureAudio = new Audio('assets/audioClips/wrongAnswer.wav');
-var completedAudio = new Audio('assets/audioClips/completedAudio.wav');
 
-var ScorePoints = 100;
-let TotalQuestions = 10;
+const MAX_SCORE_POINTS = 100;
+const TOTAL_QUESTIONS = 10;
 
-// add event listener to the toggle audio button
-toggleAudio.addEventListener("click", e => {
-    audioOn = !audioOn;
+const successAudio = new Audio('assets/audioClips/correctAnswer.wav');
+const failureAudio = new Audio('assets/audioClips/wrongAnswer.wav');
+const completedAudio = new Audio('assets/audioClips/completedAudio.wav');
 
-    // toggle the audio on/off depending on the current state
-    if (audioOn = false) {
-        (completedAudio) = true;
-    } else {
-        (completedAudio) = false;
-    }
-});
+function toggleAudio() {
+    audioOn = !audioOn
+    localStorage.setItem('audioOn', audioOn);
+}
 
-// from the video
+toggleAudioEl.addEventListener("click", toggleAudio);
+
 startGame = () => {
     questionCounter = 0;
     availableQuestions = [...MyQuestions];
     getNewQuestion();
 };
 
+function updateProggresionBar(questionCounter) {
+    progressNumber.innerText = `Question ${questionCounter} of ${TOTAL_QUESTIONS}`;
+    progressBarFull.style.width = `${(questionCounter / 10) * 100}%`;
+}
+
+//
+function showFinalMessage() {
+    gameArea.classList.add("hidden");
+    finishedMessage.classList.add("finished");
+}
+
+// redirect to a html page with a delay
+// page = String eg: 'index'
+// delay = Number of miliseconds eg: 2000
+function redirectTo(page) {
+    window.location.assign(page+'.html')
+}
+
+function redirectToWithDelay(page, delay) {
+    setTimeout(() => redirectTo(page), delay);
+}
+
 getNewQuestion = () => {
-    if (availableQuestions.length === 0 || questionCounter >= TotalQuestions) { // from the video
-        localStorage.setItem('currentScore', currentScore); // from the video
-        gameArea.classList.add("hidden");
-        // shows up a message when the game finishes
-        finishedMessage.innerHTML = "Thanks for playing!";
-        finishedMessage.classList.add("finished");
-        setTimeout(() => {
-            return window.location.assign("finishpage.html"); // from the video
-        }, 2000);
+    const MyQuestionsIndex = Math.floor(Math.random() * availableQuestions.length);
+
+    if (availableQuestions.length === 0 || questionCounter >= TOTAL_QUESTIONS) {
+        localStorage.setItem('currentScore', currentScore);
+        showFinalMessage();
+        redirectToWithDelay("finishpage", 2000);
+        // Wait 2 seconds and redirects to finishpage.html
+
         completedAudio.play();
     }
 
-    // update the score and progress bar
-    if (!progressNumber) {
-        return;
-    }
-    localStorage.setItem('audioOn', audioOn);
-    scoreText.innerText = currentScore.toString();
-    questionCounter++; // from the video
-    progressNumber.innerText = `Question ${questionCounter} of ${TotalQuestions}`; // from the video
-    progressBarFull.style.width = `${(questionCounter/10) * 100}%`; // from the video
+    if (!progressNumber) return;
 
-    // get a random question from the question.js list
-    const MyQuestionsIndex = Math.floor(Math.random() * availableQuestions.length); // from the video
+    scoreText.innerText = currentScore.toString();
+    questionCounter += 1;
+    updateProggresionBar(questionCounter);
     currentQuestion = availableQuestions[MyQuestionsIndex];
 
     if (currentQuestion) {
@@ -68,25 +86,23 @@ getNewQuestion = () => {
         });
     }
 
-    // remove the answered question from the available question list
-    availableQuestions.splice(MyQuestionsIndex, 1); // from the video
+    availableQuestions.splice(MyQuestionsIndex, 1);
 
-    acceptingAnswers = true; // from the video
+    acceptingAnswers = true;
 };
 
-answerText.forEach(option => {                          // from the video
-    option.addEventListener("click", e => {
+answerText.forEach(option => {
+    option.addEventListener("click", event => {
         if (!acceptingAnswers) return;
 
-        acceptingAnswers = false;                          // from the video
-        const selectedOption = e.target;                      // from the video
-        const selectedAnswer = selectedOption.innerHTML;          // from the video
+        acceptingAnswers = false;
+        const selectedOption = event.target;
+        const selectedAnswer = selectedOption.innerHTML;
 
-        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';  // from the video
+        let classToApply = selectedAnswer === currentQuestion.answer ? 'correct' : 'incorrect';
 
-        // if the answer is correct increment the score and play the success audio
-        if (classToApply == 'correct') {    // from the video
-            incrementScore(ScorePoints);       // from the video
+        if (classToApply == 'correct') {
+            incrementScore(MAX_SCORE_POINTS);
             if (audioOn) {
                 failureAudio.pause();
                 successAudio.currentTime=0;
@@ -100,17 +116,17 @@ answerText.forEach(option => {                          // from the video
             }
         }
 
-        selectedOption.parentElement.classList.add(classToApply); // from the video
+        selectedOption.parentElement.classList.add(classToApply);
 
-        setTimeout(() => {                                             // from the video
-            selectedOption.parentElement.classList.remove(classToApply);  // from the video
-            getNewQuestion();                                         // from the video
+        setTimeout(() => {
+            selectedOption.parentElement.classList.remove(classToApply);
+            getNewQuestion();
         }, 500);
     });
 });
 
-incrementScore = num => {  // from the video
-    currentScore += num;   // from the video
+incrementScore = num => {
+    currentScore += num;
 };
 
-startGame();  // from the video
+startGame();
