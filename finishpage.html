@@ -13,12 +13,12 @@
         <h1 class="game-title">90 &apos; s Quiz Game</h1>
     </header>
     <main class="game-area">
-        <section id="finish" class="center column square">
-            <h2 id="finalScore">0</h2>
+        <section class="center column square finish">
+            <h2 class="final-score">0</h2>
             <form class="finish-form">
-                <p id="finish-text">Choose a nickname to be on the leaderboard!<i class="fa-solid fa-trophy"></i></p>
-                <input type="text" name="name" id="nickname" placeholder="Enter your nickname">
-                <button class="btn" id="scorebtn" type="submit" onclick="saveScore(event)" disabled>Save</button>
+                <p class="finish-text">Choose a nickname to be on the leaderboard!<i class="fa-solid fa-trophy"></i></p>
+                <input type="text" name="name" class="nickname" placeholder="Enter your nickname">
+                <button class="btn score-btn" type="submit" onclick="saveScore(event)" disabled>Save</button>
             </form>
             <a href="game.html" class="btn">Play Again</a>
             <a href="index.html" class="btn">Home</a>

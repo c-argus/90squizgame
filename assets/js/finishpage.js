@@ -1,38 +1,38 @@
-var nickname = document.getElementById('nickname');
-var scorebtn = document.getElementById('scorebtn');
-var finalScore = document.getElementById('finalScore');
-var scores = JSON.parse(localStorage.getItem('scores')) || [];
-var currentScore = localStorage.getItem('currentScore');
-let audioState = localStorage.getItem('audioOn');
-var maxHighScores = 5;
+const nicknameElement = document.querySelector('.nickname');
+const scorebtnElement = document.querySelector('.score-btn');
+const finalScoreElement = document.querySelector('.final-score');
+
+const scores = JSON.parse(localStorage.getItem('scores')) || [];
+const scoreText = localStorage.getItem('currentScore');
+const audioState = localStorage.getItem('audioOn');
+
+const MAX_HIGH_SCORE = 5;
 var completedAudio = new Audio('assets/audioClips/completedAudio.wav');
 
 // Display final score
-finalScore.innerText = currentScore.toString();
+finalScoreElement.innerText = scoreText.toString();
 
 // Enable the score submit button only if the nickname field has a value
-nickname.addEventListener('keyup', () => { // from the video
-    scorebtn.disabled = !nickname.value;     // from the video
+nicknameElement.addEventListener('keyup', () => { // from the video
+    scorebtnElement.disabled = !nicknameElement.value;     // from the video
 });
 
 // Function to save the score and name to local storage
-saveScore = e => {        // from the video
-    e.preventDefault();     // from the video
-
-    const scoreText = {     // from the video
-        scoreText: currentScore, // from the video
-        name: nickname.value,   // from the video
+const saveScore = (e) => {       
+    e.preventDefault();    
+    const name = nicknameElement.value;
+    const score = {     
+        scoreText, 
+        name,  
     };
 
     // Add new score to the scores array
-    scores.push(scoreText); // from the video
+    scores.push(score); // from the video
 
     // Sort scores array in descending order based on scoreText property
-    scores.sort((a,b) => {          // from the video
-        return b.scoreText - a.scoreText;  // from the video
-    });
+    scores.sort((a,b) => b.scoreText - a.scoreText);
 
-    scores.splice(5); // from the video
+    scores.splice(MAX_HIGH_SCORE); 
     // Store scores array in local storage
     localStorage.setItem('scores', JSON.stringify(scores)); // from the video
     // Redirect to scores page after saving score

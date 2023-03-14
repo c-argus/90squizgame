@@ -67,7 +67,7 @@ h3 {
     padding: 2rem;
 }
 
-#game {
+.game {
     width: min-content;
 }
 
@@ -173,7 +173,7 @@ h3 {
 
 /* Display on top */
 
-#display {
+.display {
     display: flex;
     justify-content: space-between;
     margin-top: 6rem;
@@ -193,7 +193,7 @@ h3 {
     text-align: center;
 }
 
-#progressBar {
+.progress-bar {
     width: 12rem;
     height: 1rem;
     border:0.2rem solid rgb(191, 154, 202);
@@ -203,7 +203,7 @@ h3 {
     overflow: hidden;
 }
 
-#progressBarFull {
+.progress-bar-full {
     height: 100%;
     background: rgb(191, 154, 202);
     width: 0%;
@@ -237,7 +237,7 @@ input::placeholder {
     color: #BF9ACA;
 }
 
-#nickname {
+.nickname {
     margin-bottom: 2rem;
     width: 100%;
     outline: none;
@@ -247,7 +247,7 @@ input::placeholder {
     padding: 1rem;
 }
 
-#finish-text {
+.finish-text {
     font-size: 1.4rem;
     text-align: center;
 }
@@ -277,7 +277,7 @@ input::placeholder {
 
 /* Toggle switch ofor audio */
 
-#sound-btn {
+.sound-btn {
     text-align: center;
     margin-bottom: 0.5rem;
 }
@@ -376,7 +376,7 @@ input:checked + .slider:before {
         margin-top: 6rem;
         justify-content: center;
     }
-    #sound-btn {
+    .sound-btn {
         text-align: center;
     }
 }
@@ -392,10 +392,10 @@ input:checked + .slider:before {
     .game-title {
         margin-top: 0.5rem;
     }
-    #progressBar {
+    .progress-bar {
         margin-top: 0.5rem;
     }
-    #sound-btn {
+    .sound-btn {
         margin-bottom: 0.2rem;
     }
 }
@@ -415,7 +415,7 @@ input:checked + .slider:before {
     .display-item {
         font-size: 0.9rem;
     }
-    #progressBar {
+    .progress-bar {
         width: 9rem;
         height: 1rem;
     }

@@ -1,16 +1,18 @@
 /*jshint esversion: 6 */
 // define correct version of ecmascript for jshint
 
+// get all necessary DOM element references
 const question = document.querySelector('.question');
 const answerText = Array.from(document.querySelectorAll('.answer-text'));
 
-const gameArea = document.getElementById('game-area');
-const scoreText = document.querySelector('.main-score');
-const toggleAudioEl = document.getElementById("audio-toggle");
-const progressNumber = document.getElementById('progressNumber');
-const progressBarFull = document.getElementById('progressBarFull');
-const finishedMessage = document.querySelector('.finished-message');
+const gameAreaElement = document.querySelector('.game-area');
+const scoreTextElement = document.querySelector('.main-score');
+const toggleAudioElement = document.querySelector('.audio-toggle-checkbox');
+const progressNumberElement = document.querySelector('.progress-number');
+const progressBarFullElement = document.querySelector('.progress-bar-full');
+const finishedMessageElement = document.querySelector('.finished-message');
 
+// define application variables
 let audioOn = true;
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -18,63 +20,63 @@ let currentScore = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
+// define application constants
 const MAX_SCORE_POINTS = 100;
 const TOTAL_QUESTIONS = 10;
 
+// create audio instances for each audio file
 const successAudio = new Audio('assets/audioClips/correctAnswer.wav');
 const failureAudio = new Audio('assets/audioClips/wrongAnswer.wav');
 const completedAudio = new Audio('assets/audioClips/completedAudio.wav');
 
-function toggleAudio() {
-    audioOn = !audioOn;
-    localStorage.setItem('audioOn', audioOn);
-}
-
-toggleAudioEl.addEventListener("click", toggleAudio);
-
-startGame = () => {
-    questionCounter = 0;
-    availableQuestions = [...MyQuestions];
-    getNewQuestion();
+ /**
+ * Increment score according to increment value.
+ * @constructor
+ * @param {integer} increment - increment value.
+ */
+const incrementScore = (increment) => {
+    currentScore += increment;
 };
 
-function updateProggresionBar(questionCounter) {
-    progressNumber.innerText = `Question ${questionCounter} of ${TOTAL_QUESTIONS}`;
-    progressBarFull.style.width = `${(questionCounter / 10) * 100}%`;
+ /**
+ * Define initial state for the game.
+ * @constructor
+ */
+ const startGame = () => {
+    questionCounter = 0;
+    availableQuestions = [...MyQuestions];
+    loadNextQuestion();
+};
+
+ /**
+ * Show finished message and redirect to finish page.
+ * @constructor
+ */
+const finishGame = () => {
+    localStorage.setItem('currentScore', currentScore);
+    showFinalMessage();
+    redirectToWithDelay("finishpage", 2000);
+    // Wait 2 seconds and redirects to finishpage.html
+
+    if (audioOn) completedAudio.play();
 }
 
-//
-function showFinalMessage() {
-    gameArea.classList.add("hidden");
-    finishedMessage.classList.add("finished");
-}
+ /**
+ * Check if the game ended.
+ * @constructor
+ */
+const shouldFinishPlaying = () => {
+    return availableQuestions.length === 0 || questionCounter >= TOTAL_QUESTIONS
+} 
 
-// redirect to a html page with a delay
-// page = String eg: 'index'
-// delay = Number of miliseconds eg: 2000
-function redirectTo(page) {
-    window.location.assign(page+'.html');
-}
-
-function redirectToWithDelay(page, delay) {
-    setTimeout(() => redirectTo(page), delay);
-}
-
-getNewQuestion = () => {
+ /**
+ * Load the next question
+ * @constructor
+ */
+const loadNextQuestion = () => {
     const MyQuestionsIndex = Math.floor(Math.random() * availableQuestions.length);
 
-    if (availableQuestions.length === 0 || questionCounter >= TOTAL_QUESTIONS) {
-        localStorage.setItem('currentScore', currentScore);
-        showFinalMessage();
-        redirectToWithDelay("finishpage", 2000);
-        // Wait 2 seconds and redirects to finishpage.html
-
-        if (audioOn) completedAudio.play();
-    }
-
-    if (!progressNumber) return;
-
-    scoreText.innerText = currentScore.toString();
+    scoreTextElement.innerText = currentScore.toString();
     questionCounter += 1;
     updateProggresionBar(questionCounter);
     currentQuestion = availableQuestions[MyQuestionsIndex];
@@ -94,6 +96,63 @@ getNewQuestion = () => {
     acceptingAnswers = true;
 };
 
+ /**
+ * Toggle audio state.
+ * @constructor
+ */
+function toggleAudio() {
+    audioOn = !audioOn;
+    localStorage.setItem('audioOn', audioOn);
+}
+
+// add click event to toggle audio
+toggleAudioElement.addEventListener("click", toggleAudio);
+
+
+
+ /**
+ * Updates progress bar size and text accordingly to the question.
+ * @constructor
+ * @param {integer} question counter - current question position.
+ */
+function updateProggresionBar(questionCounter) {
+    // update text with question counter
+    progressNumberElement.innerText = `Question ${questionCounter} of ${TOTAL_QUESTIONS}`;
+    // update progress bar size accordingly to the question
+    progressBarFullElement.style.width = `${(questionCounter / 10) * 100}%`;
+}
+
+ /**
+ * Hide the game area and display final message.
+ * @constructor
+ */
+function showFinalMessage() {
+    gameAreaElement.classList.add("hidden");
+    finishedMessageElement.classList.add("finished");
+}
+
+ /**
+ * Redirect to specific page.
+ * @constructor
+ * @param {string} page - target page name.
+ */
+function redirectTo(page) {
+    window.location.assign(page+'.html');
+}
+
+ /**
+ * Redirects with a delay.
+ * @constructor
+ * @param {string} page - target page name.
+ * @param {integer} delay - delay time in milliseconds.
+ */
+function redirectToWithDelay(page, delay) {
+    setTimeout(() => redirectTo(page), delay);
+}
+
+
+
+// create click event for each answer
 answerText.forEach(option => {
     option.addEventListener("click", event => {
         if (!acceptingAnswers) return;
@@ -123,13 +182,15 @@ answerText.forEach(option => {
 
         setTimeout(() => {
             selectedOption.parentElement.classList.remove(classToApply);
-            getNewQuestion();
+            if (shouldFinishPlaying()) {
+                finishGame()
+            } else {
+                loadNextQuestion();
+            }
         }, 500);
     });
 });
 
-incrementScore = num => {
-    currentScore += num;
-};
+
 
 startGame();
