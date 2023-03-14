@@ -1,4 +1,6 @@
-const questionEl = document.querySelector('.question');
+/*jshint esversion: 6 */
+
+const question = document.querySelector('.question');
 const answerText = Array.from(document.querySelectorAll('.answer-text'));
 
 const gameArea = document.getElementById('game-area');
@@ -23,7 +25,7 @@ const failureAudio = new Audio('assets/audioClips/wrongAnswer.wav');
 const completedAudio = new Audio('assets/audioClips/completedAudio.wav');
 
 function toggleAudio() {
-    audioOn = !audioOn
+    audioOn = !audioOn;
     localStorage.setItem('audioOn', audioOn);
 }
 
@@ -50,7 +52,7 @@ function showFinalMessage() {
 // page = String eg: 'index'
 // delay = Number of miliseconds eg: 2000
 function redirectTo(page) {
-    window.location.assign(page+'.html')
+    window.location.assign(page+'.html');
 }
 
 function redirectToWithDelay(page, delay) {
