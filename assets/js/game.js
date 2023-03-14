@@ -69,7 +69,7 @@ getNewQuestion = () => {
         redirectToWithDelay("finishpage", 2000);
         // Wait 2 seconds and redirects to finishpage.html
 
-        completedAudio.play();
+        if (audioOn) completedAudio.play();
     }
 
     if (!progressNumber) return;
