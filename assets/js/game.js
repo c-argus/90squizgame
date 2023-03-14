@@ -1,4 +1,5 @@
 /*jshint esversion: 6 */
+// define correct version of ecmascript for jshint
 
 const question = document.querySelector('.question');
 const answerText = Array.from(document.querySelectorAll('.answer-text'));
@@ -81,9 +82,9 @@ getNewQuestion = () => {
     if (currentQuestion) {
         question.innerText = currentQuestion.question;
         answerText.forEach(option => {
-            const availableAnswers = currentQuestion["options"];
+            const availableAnswers = currentQuestion.options;
             const randomAnswer = Math.floor(Math.random() * availableAnswers.length);
-            option.innerText = currentQuestion["options"][randomAnswer];
+            option.innerText = currentQuestion.options[randomAnswer];
             availableAnswers.splice(randomAnswer, 1);
         });
     }
