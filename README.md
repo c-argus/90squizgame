@@ -100,7 +100,7 @@ From that page the user can return to the Home page.
 
 ![JSHintGame](assets/images/jshint.com_gamejs.png)
 ![JSHintEnd](assets/images/jshint.com_%20finishpagejs.png)
-![JSHintLeader](assets/images/jshint.com_%20scorejs.png
+![JSHintLeader](assets/images/jshint.com_%20scorejs.png)
 
 ### CSS3 validator - Pass
 [Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fc-argus.github.io%2F90squizgame%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
