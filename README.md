@@ -94,7 +94,8 @@ From that page the user can return to the Home page.
 ### JSHint
 * No errors reported using JSHint website when using the following parameters (entered at the top of the code section):
 
-```// jshint esversion:6
+```
+// jshint esversion:6
 // Tell JSHint the currentQuiz global variable
 // can be overwritten
 ```
