@@ -96,8 +96,7 @@ From that page the user can return to the Home page.
 
 ```
 // jshint esversion:6
-// Tell JSHint the currentQuiz global variable
-// can be overwritten
+// define correct version of ecmascript for jshint
 ```
 
 ![JSHintGame](assets/images/jshint.com_gamejs.png)
