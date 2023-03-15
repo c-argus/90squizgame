@@ -1,13 +1,15 @@
+/*jshint esversion: 6 */
+// define correct version of ecmascript for jshint
+
 const nicknameElement = document.querySelector('.nickname');
 const scorebtnElement = document.querySelector('.score-btn');
 const finalScoreElement = document.querySelector('.final-score');
 
 const scores = JSON.parse(localStorage.getItem('scores')) || [];
 const scoreText = localStorage.getItem('currentScore');
-const audioState = localStorage.getItem('audioOn');
+
 
 const MAX_HIGH_SCORE = 5;
-var completedAudio = new Audio('assets/audioClips/completedAudio.wav');
 
 // Display final score
 finalScoreElement.innerText = scoreText.toString();
@@ -16,6 +18,7 @@ finalScoreElement.innerText = scoreText.toString();
 nicknameElement.addEventListener('keyup', () => { // from the video
     scorebtnElement.disabled = !nicknameElement.value;     // from the video
 });
+
 
 // Function to save the score and name to local storage
 const saveScore = (e) => {       
@@ -38,3 +41,4 @@ const saveScore = (e) => {
     // Redirect to scores page after saving score
     window.location.assign('./scorespage.html'); // from the video
 };
+scorebtnElement.addEventListener('click', saveScore);

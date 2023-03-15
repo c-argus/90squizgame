@@ -1,4 +1,4 @@
-let MyQuestions = [{
+window.MyQuestions = [{
     question: "Which video game was the first video game played in space during the 1990’s?",
     options: ["Pac Man", "Tetris", "Uno", "Super Mario"],
     answer: "Tetris",

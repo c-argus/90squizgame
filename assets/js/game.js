@@ -44,7 +44,7 @@ const incrementScore = (increment) => {
  */
  const startGame = () => {
     questionCounter = 0;
-    availableQuestions = [...MyQuestions];
+    availableQuestions = [...window.MyQuestions];
     loadNextQuestion();
 };
 
@@ -59,15 +59,15 @@ const finishGame = () => {
     // Wait 2 seconds and redirects to finishpage.html
 
     if (audioOn) completedAudio.play();
-}
+};
 
  /**
  * Check if the game ended.
  * @constructor
  */
 const shouldFinishPlaying = () => {
-    return availableQuestions.length === 0 || questionCounter >= TOTAL_QUESTIONS
-} 
+    return availableQuestions.length === 0 || questionCounter >= TOTAL_QUESTIONS;
+}; 
 
  /**
  * Load the next question
@@ -183,7 +183,7 @@ answerText.forEach(option => {
         setTimeout(() => {
             selectedOption.parentElement.classList.remove(classToApply);
             if (shouldFinishPlaying()) {
-                finishGame()
+                finishGame();
             } else {
                 loadNextQuestion();
             }
