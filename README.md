@@ -94,15 +94,13 @@ From that page the user can return to the Home page.
 ### JSHint
 * No errors reported using JSHint website when using the following parameters (entered at the top of the code section):
 
-```//jshint esversion:8
+```//jshint esversion:6
 // Tell JSHint the currentQuiz global variable
 // can be overwritten
-/*global currentQuiz:true */
-```
-![JSHintQuestions](assets/images/JSHintQuestions.png)
-![JSHintGame](assets/images/JSHintGame.png)
-![JSHintEnd](assets/images/JSHintEnd.png)
-![JSHintLeader](assets/images/JSHintLeader.png)
+
+![JSHintGame](assets/images/jshint.com_gamejs.png)
+![JSHintEnd](assets/images/jshint.com_%20finishpagejs.png)
+![JSHintLeader](assets/images/jshint.com_%20scorejs.png
 
 ### CSS3 validator - Pass
 [Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fc-argus.github.io%2F90squizgame%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
